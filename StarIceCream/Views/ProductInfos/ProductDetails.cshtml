@@ -1,0 +1,25 @@
+﻿@model StarIceCream.Models.ProductInfo
+
+@{
+    ViewData["Title"] = "ProductDetails";
+    var item = Model;
+}
+
+<h1>Product Details</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <img class="card-img-top" src="../../uploads/@item.ProductID@item.ExtName" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">@item.ProductTitle</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <h3>Title : @item.ProductTitle</h3>
+        <h3>Price : $ @item.Price</h3>
+        <h5>Product Description :</h5>
+        <p>@item.Description</p>
+    </div>
+</div>

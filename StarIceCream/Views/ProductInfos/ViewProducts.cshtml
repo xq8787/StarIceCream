@@ -1,0 +1,21 @@
+﻿@model IEnumerable<StarIceCream.Models.ProductInfo>
+
+@{
+    ViewData["Title"] = "ViewProducts";
+}
+<div class="text-center">
+    <h1 class="display-4">Our Ice Creams</h1>
+</div>
+<div class="card-columns">
+    @foreach (var item in Model)
+    {
+        <div class="card">
+            <div class="card-img" style="background-image: url('../uploads/@item.ProductID@item.ExtName');">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@item.ProductTitle</h5>
+                <a class="btn btn-primary" asp-action="ProductDetails" asp-route-id="@item.ProductID">View Details</a>
+            </div>
+        </div>
+    }
+</div>
